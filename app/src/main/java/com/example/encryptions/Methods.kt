@@ -45,6 +45,5 @@ class Methods : AppCompatActivity() {
             else
                 Toast.makeText(this,"Please enter a number.",Toast.LENGTH_LONG).show()
         }
-
     }
 }
