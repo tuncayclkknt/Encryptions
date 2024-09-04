@@ -57,7 +57,8 @@ public class EncMethods {
                 yeniH = upperCases.get(((eskiHI + shifting) + 26) % 26);
             } else if (currentChar == ' ') {
                 yeniH = ' ';
-            }
+            } else if (currentChar == '\n')
+                yeniH = '\n';
             encryptedMessage.append(yeniH);
         }
         return encryptedMessage.toString();

@@ -2,12 +2,10 @@ package com.example.encryptions
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.encryptions.databinding.ActivityMainBinding
-import com.example.encryptions.databinding.ActivityMethodsBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -23,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.button1.setOnClickListener{
-            intent = Intent(applicationContext, Methods::class.java)
+            intent = Intent(applicationContext, ShiftCipherEnc::class.java)
             startActivity(intent)
         }
 

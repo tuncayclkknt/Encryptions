@@ -2,18 +2,16 @@ package com.example.encryptions
 
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.encryptions.databinding.ActivityMainBinding
-import com.example.encryptions.databinding.ActivityMethodsBinding
+import com.example.encryptions.databinding.ActivityShiftcipherencBinding
 
-class Methods : AppCompatActivity() {
-    private lateinit var binding: ActivityMethodsBinding
+class ShiftCipherEnc : AppCompatActivity() {
+    private lateinit var binding: ActivityShiftcipherencBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMethodsBinding.inflate(layoutInflater)
+        binding = ActivityShiftcipherencBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -26,8 +24,11 @@ class Methods : AppCompatActivity() {
 
         binding.button.setOnClickListener {
             val message: String
-            if (binding.editTextTextMultiLine.text.isNotEmpty())
+            if (binding.editTextTextMultiLine.text.isNotEmpty()){
                 message = binding.editTextTextMultiLine.text.toString()
+                if (checkNumbers(message))
+                    Toast.makeText(this,"Your message cannot include numbers.",Toast.LENGTH_LONG).show()
+            }
             else{
                 Toast.makeText(this,"Please enter a text without turkish chars.",Toast.LENGTH_LONG).show()
                 message = " "
@@ -46,4 +47,14 @@ class Methods : AppCompatActivity() {
                 Toast.makeText(this,"Please enter a number.",Toast.LENGTH_LONG).show()
         }
     }
+
+    private fun checkNumbers(text: String): Boolean{
+        val numbersString: String = "1234567890"
+        for (i in text.indices){
+            if (numbersString.contains(text[i]))
+                return true
+        }
+        return false
+    }
+
 }
