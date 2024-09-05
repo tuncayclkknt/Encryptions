@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -35,16 +36,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20sp"
-            android:text="Button"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:text="Denc Shift Cipher"
             tools:layout_editor_absoluteX="131dp"
             tools:layout_editor_absoluteY="189dp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20sp"
             android:text="Button"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/button_color"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1sp"
+            android:textColor="@color/black"
+            app:cornerRadius="20sp"
             tools:layout_editor_absoluteX="131dp"
             tools:layout_editor_absoluteY="189dp" />
 
@@ -53,6 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20sp"
+            android:textAllCaps="false"
             android:text="Button"
             tools:layout_editor_absoluteX="131dp"
             tools:layout_editor_absoluteY="189dp" />

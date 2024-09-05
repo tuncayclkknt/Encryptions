@@ -5,60 +5,59 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShiftCipherEnc">
+    tools:context=".DencShiftCipher">
 
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:orientation="vertical"
-        android:padding="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.356">
+        android:gravity="center"
+        android:padding="10sp">
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/editTextTextMultiLine2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="20sp"
             android:ems="10"
             android:gravity="start|top"
             android:inputType="textMultiLine"
-            tools:layout_editor_absoluteX="101dp"
-            tools:layout_editor_absoluteY="98dp" />
+            android:layout_marginVertical="20sp"
+            tools:layout_editor_absoluteX="96dp"
+            tools:layout_editor_absoluteY="63dp" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/editTextNumber2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20sp"
             android:ems="10"
+            android:hint="Optinal"
             android:inputType="number"
-            tools:layout_editor_absoluteX="101dp"
-            tools:layout_editor_absoluteY="171dp" />
+            tools:layout_editor_absoluteX="96dp"
+            tools:layout_editor_absoluteY="166dp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/button5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20sp"
             android:text="Button"
-            tools:layout_editor_absoluteX="165dp"
-            tools:layout_editor_absoluteY="252dp" />
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="292dp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="100sp"
-            android:text="Delete After"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="175dp"
-            tools:layout_editor_absoluteY="384dp" />
+            android:layout_marginVertical="120sp"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="178dp"
+            tools:layout_editor_absoluteY="425dp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

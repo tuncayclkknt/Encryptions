@@ -19,6 +19,20 @@ public class EncMethods {
         }
     }
 
+    public boolean checkNumbers(String text){
+        String numbersString = "1234567890";
+        try{
+        for (int i = 0; i < text.length();i++){
+            if (numbersString.contains(String.valueOf(text.charAt(i)))){
+                return true;
+            }
+        }
+        }catch (IndexOutOfBoundsException e){
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+
     public static ArrayList<Integer> modsOfNumber(int encFark){
 
         while (encFark < 0)
@@ -55,8 +69,6 @@ public class EncMethods {
             } else if (upperCases.contains(currentChar)) {
                 int eskiHI = upperCases.indexOf(currentChar);
                 yeniH = upperCases.get(((eskiHI + shifting) + 26) % 26);
-            } else if (currentChar == ' ') {
-                yeniH = ' ';
             } else if (currentChar == '\n')
                 yeniH = '\n';
             encryptedMessage.append(yeniH);
@@ -71,7 +83,6 @@ public class EncMethods {
             StringBuilder decryptedMessage = new StringBuilder();
             for (int i = 0; i < message.length(); i++) {
                 char a = message.charAt(i);
-
                 if (lowerCases.contains(a)) {
                     a = lowerCases.get(((lowerCases.indexOf(a) - j) + 26) % 26);
                     decryptedMessage.append(a);
@@ -84,6 +95,26 @@ public class EncMethods {
             }
             decryptedMessages.add("The message for shift " + j + ": " + decryptedMessage);
         }
+        return decryptedMessages;
+    }
+
+    public List<String> dencShiftCipher(String message, int shiftTimes){
+        List<String> decryptedMessages = new ArrayList<>();
+        StringBuilder decryptedMessage = new StringBuilder();
+        for (int i = 0; i < message.length(); i++) {
+            char a = message.charAt(i);
+
+            if (lowerCases.contains(a)) {
+                a = lowerCases.get(((lowerCases.indexOf(a) - shiftTimes) + 26) % 26);
+                decryptedMessage.append(a);
+            } else if (upperCases.contains(a)) {
+                a = upperCases.get(((upperCases.indexOf(a) - shiftTimes) + 26) % 26);
+                decryptedMessage.append(a);
+            } else if (a == ' ') {
+                decryptedMessage.append(' ');
+            }
+        }
+        decryptedMessages.add("The message for shift " + shiftTimes + ": " + decryptedMessage);
         return decryptedMessages;
     }
 
@@ -176,5 +207,4 @@ public class EncMethods {
         }
         return "a = " + a + ", b = " + b;
     }
-
 }
