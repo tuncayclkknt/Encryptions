@@ -6,13 +6,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.encryptions.databinding.ActivityMainBinding
+import com.example.encryptions.databinding.ActivityMainPageBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class main_page : AppCompatActivity() {
+    private lateinit var binding: ActivityMainPageBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainPageBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         enableEdgeToEdge()
@@ -22,14 +22,13 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        binding.btnShiftEnc.setOnClickListener{
-            intent = Intent(applicationContext, EncShiftCipher::class.java)
+        binding.btnShiftCipher.setOnClickListener {
+            val intent = Intent(this@main_page,MainActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnShiftDenc.setOnClickListener {
-            intent = Intent(applicationContext, DencShiftCipher::class.java)
-            startActivity(intent)
+        binding.btnAffineCipher.setOnClickListener {
+
         }
 
     }
